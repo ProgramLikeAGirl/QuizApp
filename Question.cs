@@ -12,9 +12,17 @@ namespace QuizApp
         public string[] Answers { get; set; }
         public int CorrectAnswerIndex { get; set; }
 
-        public Question()
+        public Question(string questionText, string[] answers, int correctAnswerIndex)
         {
+            QuestionText = questionText;
+            Answers = answers;
+            CorrectAnswerIndex = correctAnswerIndex;
 
+        }
+
+        public bool IsCorrectAnswer(int userChoice)
+        {
+            return CorrectAnswerIndex == userChoice;
         }
     }
 }
